@@ -1,14 +1,16 @@
 <script setup>
 
-import {useFlash} from "@/composables/useFlash.js";
+import {useStorage} from "@/composables/useStorage.js";
 
-const {flash} = useFlash();
+let food = useStorage('food', 'salad');
+let age = useStorage('age', 0);
 </script>
 
 <template>
   <main>
     <p>
-      <button @click="flash('Awesome', 'It works from Home!')">Click me</button>
+      What is your favorite food?<input v-model="food" type="text"/>
+      What is your age? <input v-model="age" type="text"/>
     </p>
   </main>
 </template>
