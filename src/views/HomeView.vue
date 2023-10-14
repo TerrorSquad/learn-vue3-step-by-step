@@ -1,14 +1,14 @@
 <script setup>
-import TabbableTextarea from "@/components/TabbableTextarea.vue";
-import {ref} from "vue";
+import QuizMain from '@/components/Quiz/QuizMain.vue';
+import {state} from '@/stores/quizState.js';
+import {provide} from 'vue';
 
-let comment = ref('test value');
+provide('quiz', state);
+
 </script>
 
 <template>
   <main>
-    <form>
-      <TabbableTextarea v-model="comment" style="width: 100%; height: 300px;"/>
-    </form>
+    <QuizMain/>
   </main>
 </template>
