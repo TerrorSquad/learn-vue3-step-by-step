@@ -8,7 +8,8 @@ let team = useTeamStore()
   <header class="flex justify-between">
     <div>
       <button :disabled="team.isFull"
-              class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded disabled:bg-gray-600">Add Member ({{ team.spotsLeft }} spots
+              class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded disabled:bg-gray-600"
+              @click="$emit('add')">Add Member ({{ team.spotsLeft }} spots
         left)
       </button>
     </div>
