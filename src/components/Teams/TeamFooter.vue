@@ -1,11 +1,7 @@
 <script setup>
+import {useTeamStore} from "@/stores/TeamStore.js"
 
-defineProps({
-  team: {
-    type: Object,
-    required: true
-  }
-})
+let team = useTeamStore()
 </script>
 
 <template>

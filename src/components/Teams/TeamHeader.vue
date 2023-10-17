@@ -1,17 +1,14 @@
 <script setup>
-defineProps({
-  team: {
-    type: Object,
-    required: true
-  }
-})
+import {useTeamStore} from "@/stores/TeamStore.js"
+
+let team = useTeamStore()
 </script>
 
 <template>
   <header class="flex justify-between">
     <div>
-      <button :disabled="true"
-              class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded disabled:bg-gray-600">Add Member ({{ team.spots - team.members.length }} spots
+      <button :disabled="team.isFull"
+              class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded disabled:bg-gray-600">Add Member ({{ team.spotsLeft }} spots
         left)
       </button>
     </div>
